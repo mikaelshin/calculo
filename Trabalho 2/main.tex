@@ -1,0 +1,246 @@
+\documentclass{article}
+\usepackage[top=2.7cm, bottom=2.7cm, right=1.8cm, left=1.8cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, latexsym, bigints, graphicx}
+
+\usepackage[spanish]{babel}
+
+
+\title{Trabalho 2 de Cálculo 2}
+
+\author{Alexandre Okamoto \and Larissa Maruyama \and Luisa Landert \and Mikael Shin}
+
+\date{06/11/2019}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Base para os exercícios 1 e 2:}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.25]{areadeseccao.png}
+    \end{figure}
+    \begin{align*}
+     A\left(r,a\right)
+     & \ = \ 2 \cdot \int_{a}^{r} \sqrt{r^{2} - x^{2}} \ dx \\\\
+     & \ = \ \dfrac{\pi \cdot r^{2}}{2} - r^{2}\left(\arcsen \dfrac{a}{r} + \dfrac{a}{r} \sqrt{1 - \left(\dfrac{a}{r} \right)^{2}} \right) \\\\
+     & \ = \ \dfrac{\pi \cdot r^{2}}{2} - r^{2}\left(\arcsen \dfrac{a}{r} + \dfrac{a}{r^{2}} \sqrt{r^{2} - a^{2}} \right).
+    \end{align*}
+    
+% Ex 1 -------------------------------------------------------------
+\textbf{Exercício 1:}
+    \begin{figure}
+        \centering
+        \includegraphics[scale = 0.206]{ex1.png}
+    \end{figure} 
+    \begin{align*}
+     A\left(R,R - \frac{d}{2}\right) 
+     & \ = \ 2 \cdot \left( 2 \cdot \int_{R-\dfrac{d}{2}}^{R} \sqrt{R^{2} - x^{2}} \ dx \right) \\\\
+     & \ = \ 2 \cdot \left( \dfrac{\pi \cdot R^{2}}{2} - R^{2}\left(\arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right) + \dfrac{R - \dfrac{d}{2}}{R^{2}} \cdot \sqrt{R^{2} - \left(R - \dfrac{d}{2} \right)^{2}} \right) \right) \\\\
+     & \ = \ \dfrac{2 \pi R^{2}}{2} - 2R^{2}\left(\arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right) + \dfrac{R - \dfrac{d}{2}}{R^{2}} \cdot \sqrt{R^{2} - \left(R - \dfrac{d}{2} \right)^{2}} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2}\left( \arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right) + \dfrac{R - \dfrac{d}{2}}{R^{2}} \cdot \sqrt{R^{2} - \left(R^{2} - 2\cdot R \dfrac{d}{2} + \dfrac{d^{2}}{4}\right)} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2}\left( \arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right) + \dfrac{R - \dfrac{d}{2}}{R^{2}} \cdot \sqrt{R^{2} - R^{2} + R \dfrac{d}{2} - \dfrac{d^{2}}{4}} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2}\left( \arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right) + \dfrac{R - \dfrac{d}{2}}{R^{2}} \cdot \sqrt{R^{2} - R^{2} + R \dfrac{d}{2} - \dfrac{d^{2}}{4}} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2}\left( \arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right) + \dfrac{R - \dfrac{d}{2}}{R^{2}} \cdot \dfrac{\sqrt{4Rd - d^{2}}}{2} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left( \dfrac{R - \dfrac{d}{2}}{R} \right)+ \left(R - \dfrac{d}{2}\right) \cdot \sqrt{4Rd - d^{2}}.\\\\
+    \end{align*}
+Caso particular: para d = 0 
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.16]{ex1caso1.png}
+    \end{figure} 
+    \begin{align*}
+     A
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left(\dfrac{R - \dfrac{0}{2}}{R} \right) + \left(R - \dfrac{0}{2} \cdot \sqrt{4R \cdot 0 - 0^{2}} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left(\dfrac{R}{R} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left(1 \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \cdot \dfrac{\pi}{2}\\\\
+     & \ = \ \pi R^{2} - \pi 2R^{2}\\\\
+     & \ = \ 0.\\
+    \end{align*}
+Caso particular: para d = 2R
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.2]{ex1caso2.png}
+    \end{figure} 
+    \begin{align*}
+     A 
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left(\dfrac{R - \dfrac{2R}{2}}{R} \right) + \left(R - \dfrac{2R}{2} \cdot \sqrt{4R \cdot 2R - (2R)^{2}} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left( 0 \right) + 0 \cdot \sqrt{8R - 4R^{2}}\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \cdot 0 + 0\\\\
+     & \ = \ \pi R^{2}.\\\\
+    \end{align*}
+Caso particular: para d = R
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.16]{ex1caso3.png}
+    \end{figure} 
+    \begin{align*}
+     A
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left(\dfrac{R - \dfrac{R}{2}}{R} \right) + \left(R - \dfrac{R}{2} \cdot \sqrt{4R \cdot R - R^{2}} \right)\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left( \dfrac{R}{2R} \right) + \dfrac{R}{2} \cdot \sqrt{4R^{2} - R^{2}}\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \arcsen \left( \dfrac{1}{2} \right) + \dfrac{R}{2} \cdot \sqrt{3} \cdot R\\\\
+     & \ = \ \pi R^{2} - 2R^{2} \dfrac{\pi}{6} + \dfrac{R^{2}}{2} \cdot \sqrt{3}\\\\
+     & \ = \ \pi R^{2} - R^{2} \dfrac{\pi}{3} + \dfrac{R^{2}}{2} \cdot \sqrt{3}\\\\
+     & \ = \ \dfrac{6 \pi R^{2} - 2 \pi R^{2} + 3R^{2} \cdot \sqrt{3}}{6}\\\\
+     & \ = \ \dfrac{4 \pi R^{2} + 3R^{2} \cdot \sqrt{3}}{6}\\\\
+     & \ = \ \dfrac{R^{2}}{6} \cdot (4\pi - 3\sqrt{3}).\\
+    \end{align*}
+Resolução sem o uso de integral para d = R
+    \begin{align*}
+     \pi R^{2} \ = \ 6 \ T + 6 \ a \\\\
+     \dfrac{\pi R^{2}}{6} \ = \ T + a \\\\
+     a \ = \  \dfrac{\pi R^{2}}{6} - T
+    \end{align*}
+    \begin{align*}
+     A 
+     & = 2 \ T + 4 \ a \\\\
+     & \ = \ 2T + \dfrac{4 \pi R^{2}}{6} - 4T \\\\
+     & \ = \ \dfrac{4 \pi R^{2}}{6} - 2T \\\\
+     & \ = \ \dfrac{4 \pi R^{2}}{6} - 2\left( \dfrac{R^{2} \cdot \sqrt{3}}{4}\right) \\\\
+     & \ = \ 4 \pi \dfrac{R^{2}}{6} - \dfrac{R}{2} \cdot \sqrt{3}\\\\
+     & \ = \ 4 \pi \dfrac{R^{2}}{6} - \dfrac{3 \cdot R}{6} \cdot \sqrt{3}\\\\
+     & \ = \ \dfrac{R^{2}}{6} \cdot (4\pi - 3\sqrt{3}).\\
+    \end{align*}
+% Ex 2 -------------------------------------------------------------   
+\textbf{Exercício 2:}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.2]{ex2.png}
+    \end{figure}
+    \begin{align*}
+     r^{2} \ = \ a^{2} + d^{2} \\
+     d^{2} \ = \ r^{2} - a^{2} 
+    \end{align*}
+    \begin{center}
+        e também
+    \end{center}
+    \begin{align*}
+     R^{2} \ = \ b^{2} + d^{2} \\
+     d^{2} \ = \ R^{2} - b^{2} \\
+    \end{align*}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.54]{triangulo.png}
+    \end{figure}
+    $R$ para $a > 0$
+    \begin{align*}
+     R^{2} = (R - (\alpha r - a))^{2} - (r^{2} - a^{2}) \\\\
+     R^{2} = R^{2} - 2R \cdot (\alpha r - a) + (\alpha r - a)^{2} + r^{2} - a^{2}\\\\
+     2R \cdot (\alpha r - a) = (\alpha r - a)^{2} + r^{2} - a^{2} 
+    \end{align*}
+    \begin{align*}
+     R 
+     & \ = \ \dfrac{(\alpha r - a)^{2} + r^{2} - a^{2}}{2(\alpha r - a)} \\\\
+     & \ = \ \dfrac{(\alpha \cdot r)^{2} - 2 \cdot \alpha \cdot r \cdot  a + a^{2} + r^{2} - a^{2}}{2 \cdot (\alpha r - a)} \\\\
+     & \ = \ \dfrac{r^{2}(\alpha^{2} + 1) - 2 \cdot \alpha \cdot r \cdot a }{2 \cdot (\alpha r - a)}. \\\\
+    \end{align*}
+    $R$ para $a = 0$
+    \begin{align*}
+     R
+     & \ = \ \dfrac{r^{2}(\alpha^{2} + 1) - 2 \cdot \alpha \cdot r \cdot a }{2 \cdot (\alpha r - a)} \\\\  
+     & \ = \ \dfrac{r^{2}(\alpha^{2} + 1) - 2 \cdot \alpha \cdot r \cdot 0}{2 \cdot (\alpha r - 0)} \\\\
+     & \ = \ (\dfrac{r^{2}(\alpha^{2} + 1)}{2 \cdot (\alpha r)}. \\
+    \end{align*}
+    Área para $a > 0$
+    \begin{align*}
+     A 
+     & \ = \ A(r, a) - A(R, R - (\alpha r - a))\\\\
+     & \ = \ A(r, a) - A(R, b) \\\\
+     A(r, a) 
+     & \ = \ \dfrac{\pi \cdot r^{2}}{2} - r^{2}\left(\arcsen \dfrac{a}{r} + \dfrac{a}{r^{2}} \sqrt{r^{2} - a^{2}} \right)
+    \end{align*}
+    \begin{align*}
+     A(R, R - (\alpha r - a))
+     & \ = \ \dfrac{\pi \cdot R^{2}}{2} - R^{2}\left(\arcsen \dfrac{R - (\alpha r - a)}{R} + \dfrac{R - (\alpha r - a)}{R^{2}} \sqrt{R^{2} - (R - (\alpha r - a))^{2}} \right) \\\\
+     & \ = \ \dfrac{\pi \cdot R^{2}}{2} - R^{2}\left(\arcsen \dfrac{R - (\alpha r - a)}{R} + \dfrac{R - (\alpha r - a)}{R^{2}} \sqrt{R^{2} - R^{2} + (\alpha r - a)^{2}} \right) \\\\
+     & \ = \ \dfrac{\pi \cdot R^{2}}{2} - R^{2}\left(\arcsen \dfrac{R - (\alpha r - a)}{R} + \dfrac{R - (\alpha r - a)}{R^{2}} \sqrt{(\alpha r - a)^{2}} \right) \\\\
+     & \ = \ \dfrac{\pi \cdot R^{2}}{2} - R^{2}\left(\arcsen \dfrac{R - (\alpha r - a)}{R} + \dfrac{R - (\alpha r - a)}{R^{2}} \cdot (\alpha r - a) \right) \\\\
+     & \ = \ \dfrac{\pi \cdot R^{2}}{2} - R^{2}\left(\arcsen \dfrac{R - (\alpha r - a)}{R} + \dfrac{R - (\alpha r - a)^{2}}{R^{2}} \right) \\\\
+     & \ = \ R^{2}\left(\dfrac{\pi}{2} - \arcsen \left(1 - \dfrac{(\alpha r - a)}{R} \right) - \dfrac{1}{R} + \dfrac{(\alpha r - a)^{2}}{R^{2}} \right)\\
+    \end{align*}
+    \begin{align*}
+     A 
+     & \ = \ A(r, a) - A(R, R - (\alpha r - a))\\\\
+     & \ = \ \dfrac{\pi \cdot r^{2}}{2} - r^{2}\left(\arcsen \dfrac{a}{r} + \dfrac{a}{r^{2}} \sqrt{r^{2} - a^{2}} \right) - R^{2}\left(\dfrac{\pi}{2} - \arcsen \left(1 - \dfrac{(\alpha r - a)}{R} \right) - \dfrac{1}{R} + \dfrac{(\alpha r - a)^{2}}{R^{2}} \right).\\
+    \end{align*}
+    Área para $a = 0$
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.18]{ex2caso1.png}
+    \end{figure}
+    \begin{align*}
+     A 
+     & \ = \ A(r, 0) - A(R, R - \alpha r)\\
+    \end{align*}
+    \begin{align*}
+     A(r, 0) 
+     & \ = \ \dfrac{\pi r^{2}}{2}
+    \end{align*}
+    \begin{align*}
+     A(R, R - \alpha r)
+     & \ = \ \left(\dfrac{r^{2}(\alpha^{2} + 1)}{2 \cdot (\alpha r)}\right)^{2}\left(\dfrac{\pi}{2} - \arcsen \left(1 - \dfrac{(\alpha r)}{\left(\dfrac{r^{2}(\alpha^{2} + 1)}{2 \cdot (\alpha r)}\right)} \right) - \dfrac{1}{\left(\dfrac{r^{2}(\alpha^{2} + 1)}{2 \cdot (\alpha r)}\right)} + \dfrac{\alpha r^{2}}{\left(\dfrac{r^{2}(\alpha^{2} + 1)}{2 \cdot (\alpha r)}\right)^{2}} \right)\\\\
+     & \ = \ \left(\dfrac{r^{4}(\alpha^{2} + 1)^{2}}{4 \cdot (\alpha r)^{2}}\right) \left(\dfrac{\pi}{2} - \arcsen \left(1 - \dfrac{2(\alpha r)^{2}}{r^{2}(\alpha^{2}+1)} \right) - \dfrac{2 \alpha r}{r^{2} (\alpha^{2} + 1)} + \dfrac{4(\alpha r)^{4}}{r^{4}(\alpha^{2} + 1)^{2}} \right)\\\\
+     & \ = \ \dfrac{r^{2}(\alpha^{2} + 1)^{2}}{4 \cdot \alpha^{2}} \left(\dfrac{\pi}{2} - \arcsen \left(1 - \dfrac{2 \alpha^{2}}{\alpha^{2}+1} \right) - \dfrac{2 \alpha }{r (\alpha^{2} + 1)} + \dfrac{4\alpha^{4}}{(\alpha^{2} + 1)^{2}} \right)\\
+    \end{align*}
+    \begin{align*}
+     A 
+     & \ = \ A(r, 0) - A(R, R - \alpha r)\\\\
+     & \ = \ \dfrac{\pi r^{2}}{2} - \dfrac{r^{2}(\alpha^{2} + 1)^{2}}{4 \cdot \alpha^{2}} \left(\dfrac{\pi}{2} - \arcsen \left(1 - \dfrac{2 \alpha^{2}}{\alpha^{2}+1} \right) - \dfrac{2 \alpha }{r (\alpha^{2} + 1)} + \dfrac{4\alpha^{4}}{(\alpha^{2} + 1)^{2}} \right).
+    \end{align*}
+% Fim do Ex2 ---------------------------
+\textbf{Base para o exercício 3}
+    \begin{center}
+        Teorema de Pitágoras
+    \end{center}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.33]{ex3pitagoras.png}
+    \end{figure} 
+    \begin{align*}
+        (a + b)^{2} \ = \ h^{2} + 4 \cdot \cfrac{a \cdot b}{2} \\\\
+        a^{2} + 2ab + b^{2} \ = \ h^{2} + 2ab \\\\
+        a^{2} + b^{2} = h^{2}\\\\
+    \end{align*}
+    \begin{center}
+        Teorema do Cosseno
+    \end{center}
+    \begin{figure}[!htb]
+        \centering
+         \includegraphics[scale = 0.23]{ex3cosseno.png}
+    \end{figure} 
+    \begin{align*}
+        c^{2}
+        & = (a \cdot \sen \gamma)^{2} + (b - a \cdot \cos \gamma)^{2} \\\\
+        & = a^{2} \sen ^{2} \gamma + b^{2} - 2ab \cos \gamma + a^{2} \cos^{2} \gamma \\\\
+        & = a^{2} + b^{2} - 2ab \cdot \cos \gamma \\\\
+    \end{align*}
+% Ex 3 -------------------------------------------------------------
+\textbf{Exercício 3:}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale = 0.22]{ex3.png}
+    \end{figure} 
+    \begin{align*}
+     l_i^{2}
+     &\ = \ R^{2} + R^{2} - 2R \cdot R \cdot \cos \alpha_i\\\\
+     &\ = \ 2R^{2} - 2R^{2} \cdot \cos \alpha_i\\\\
+     &\ = \ 2R^{2} \cdot (1 - \cos \alpha_i)\\\\
+     A_i^{2} 
+     & \ = \ \dfrac{l_i^{2} \cdot d_i^{2}}{2^{2}}\\\\
+     & \ = \ \dfrac{2R^{2}(1 - \cos \alpha_i)}{4} \cdot R^{2} \cdot \cos ^{2} \alpha_i\\\\
+     & \ = \ R^{2} \cdot R^{2} \cdot \dfrac{(1 - \cos \alpha_i)}{2} \cdot \cos ^{2} \alpha_i\\\\
+     & \ = \ R^{4} \cdot \sen ^{2} \alpha_i \cdot \cos ^{2} \alpha_i\\\\
+    \end{align*}
+    \begin{align*}
+     A_i
+     & \ = \ \dfrac{R^{2}}{2} \cdot 2 \sen \alpha_i \cdot \cos \alpha_i\\\\
+     & \ = \ \dfrac{R^{2}}{2} \cdot \sen 2 \alpha_i \\\\\\\
+     A_T 
+     & \ = \ A_1 + A_2 + A_3 \\\\
+     & \ = \ \dfrac{R^{2}}{2} \cdot \sen 2 \alpha_1 + \dfrac{R^{2}}{2} \cdot \sen 2 \alpha_2 + \dfrac{R^{2}}{2} \cdot \sen 2 \alpha_3 \\\\
+     & \ = \ \dfrac{R^{2}}{2} \left( \sen 2 \alpha_1 + \sen 2 \alpha_2 + \sen 2 \alpha_3 \right).
+    \end{align*}
+    
+ \end{document}
